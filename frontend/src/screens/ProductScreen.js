@@ -12,6 +12,7 @@ export default function ProductScreen(props) {
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  //console.log(product.productdetails)
 
   useEffect(() => {
     dispatch(detailsProduct(productId));
@@ -47,10 +48,11 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li>Pirce : ${product.price}</li>
+                <li>Price : ${product.price}</li>
                 <li>
                   Description:
-                  <p>{product.description}</p>
+                  {product.productdetails.map((detail) => (<p>{detail.col1}</p>))}
+                  
                 </li>
               </ul>
             </div>

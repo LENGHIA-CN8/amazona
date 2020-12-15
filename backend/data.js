@@ -37,6 +37,7 @@ const data = {
       rating: 4.0,
       numReviews: 10,
       description: 'Đồng hồ thông minh',
+
     },
     {
       name: 'Máy tính Fujusu',

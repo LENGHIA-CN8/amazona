@@ -5,11 +5,13 @@ import path from 'path';
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
 import orderRouter from './routers/orderRouter.js';
+import cors from 'cors'
 // import uploadRouter from './routers/uploadRouter.js';
 
 dotenv.config();
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
