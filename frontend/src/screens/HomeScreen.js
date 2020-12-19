@@ -3,6 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Product from '../components/Product';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
+import MessageBox from '../components/MessageBox';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -16,7 +17,10 @@ export default function HomeScreen() {
   return (
     <div>
       <h2>Sản Phẩm Nổi Bật</h2>
-      { (
+      { 
+      error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ):(
         <>
           <div className="row center">
             {products.map((product) => (
